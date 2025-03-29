@@ -1,38 +1,23 @@
 import bg_cat from "./assets/5.png";
 import header_doms from "./assets/11.svg";
-import jay from "./assets/jay.jpg";
-import toph from "./assets/toph.jpg";
-import toph2 from "./assets/toph2.jpg";
-import lux from "./assets/lux.jpg";
-import sage from "./assets/sage.jpg";
-import sage2 from "./assets/sage2.jpg";
-import nah from "./assets/nah.jpg";
-import jjk from "./assets/jjk.jpg";
+// import jay from "./assets/jay.jpg";
+// import toph from "./assets/toph.jpg";
+// import toph2 from "./assets/toph2.jpg";
+// import lux from "./assets/lux.jpg";
+// import sage from "./assets/sage.jpg";
+// import sage2 from "./assets/sage2.jpg";
+// import nah from "./assets/nah.jpg";
+// import jjk from "./assets/jjk.jpg";
 import me from "./assets/me.png";
 import cv from "./assets/molino.dominic.cv.pdf";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./components/ui/card";
+import { Facebook, File, Linkedin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./components/ui/carousel";
-import { Facebook, File, Linkedin } from "lucide-react";
 
 function App() {
   const projects = [
@@ -74,16 +59,16 @@ function App() {
     },
   ];
 
-  const pictures = [
-    { src: jay, name: "jay" },
-    { src: toph, name: "toph" },
-    { src: toph2, name: "toph" },
-    { src: lux, name: "lux" },
-    { src: sage, name: "sage" },
-    { src: sage2, name: "sage" },
-    { src: nah, name: "Just a meme" },
-    { src: jjk, name: "jjk" },
-  ];
+  // const pictures = [
+  //   { src: jay, name: "jay" },
+  //   { src: toph, name: "toph" },
+  //   { src: toph2, name: "toph" },
+  //   { src: lux, name: "lux" },
+  //   { src: sage, name: "sage" },
+  //   { src: sage2, name: "sage" },
+  //   { src: nah, name: "Just a meme" },
+  //   { src: jjk, name: "jjk" },
+  // ];
 
   return (
     <main className=" min-h-screen w-full bg-background relative flex flex-col scroll-smooth ">
