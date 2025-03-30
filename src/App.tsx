@@ -1,5 +1,6 @@
 import bg_cat from "./assets/5.png";
 import header_doms from "./assets/11.svg";
+import contact_cat from "./assets/9.png";
 // import jay from "./assets/jay.jpg";
 // import toph from "./assets/toph.jpg";
 // import toph2 from "./assets/toph2.jpg";
@@ -11,13 +12,29 @@ import header_doms from "./assets/11.svg";
 import me from "./assets/me.png";
 import cv from "./assets/molino.dominic.cv.pdf";
 
-import { Facebook, File, Linkedin } from "lucide-react";
+import { AlignJustify, Facebook, File, Linkedin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./components/ui/dropdown-menu";
 
 function App() {
   const projects = [
@@ -71,46 +88,62 @@ function App() {
   // ];
 
   return (
-    <main className=" min-h-screen w-full bg-background relative flex flex-col scroll-smooth ">
+    <main className="min-h-screen w-full bg-background relative flex flex-col scroll-smooth ">
       <img
         src={bg_cat}
         alt="Black Cat"
-        className="absolute w-[500px] -left-1 top-32 z-10 pointer-events-none"
+        className="absolute w-[300px] sm:w-[500px] max-sm:hidden md:opacity-60 top-20 sm:top-32 z-10 pointer-events-none"
       />
 
-      <header className="w-full flex items-center justify-between px-20 relative py-5">
+      <header className="w-full flex items-center justify-between px-4 sm:px-10 md:px-20 py-5 relative">
         <img
           src={header_doms}
           alt="logo"
-          className="w-48 pointer-events-none z-20"
+          className="w-32 sm:w-48 pointer-events-none z-20"
         />
 
-        <ul className="flex w-fit gap-10">
-          <li className="font-mosk text-base cursor-pointer font-medium ">
+        <ul className="hidden sm:flex w-fit gap-6 md:gap-10">
+          <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
             <a href="#home">home</a>
           </li>
-          <li className="font-mosk text-base cursor-pointer font-medium ">
+          <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
             <a href="#feature">feature</a>
           </li>
-          <li className="font-mosk text-base cursor-pointer font-medium ">
-            <a href="#contact"> contact</a>
+          <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
+            <a href="#contact">contact</a>
           </li>
-          {/* <li className="font-mosk text-base cursor-pointer font-medium ">
-            contact
-          </li> */}
         </ul>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger className="hidden max-sm:block">
+            <AlignJustify />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="rounded-md p-2">
+            <ul className="flex flex-col w-fit gap-1 md:gap-10">
+              <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
+                <a href="#home">home</a>
+              </li>
+              <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
+                <a href="#feature">feature</a>
+              </li>
+              <li className="font-mosk text-sm md:text-base cursor-pointer font-medium">
+                <a href="#contact">contact</a>
+              </li>
+            </ul>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </header>
 
       <section
         id="home"
-        className="w-full max-w-[600px] min-h-screen mx-auto flex flex-col relative justify-center items-center -mt-20"
+        className="w-full max-w-[90%] sm:max-w-[600px] sm:px-5 min-h-screen mx-auto flex flex-col relative justify-center items-center -mt-20"
       >
-        <span className="self-start font-jenthill tracking-widest transform -rotate-6 text-3xl -left-10 absolute top-28">
+        <span className="self-start font-jenthill tracking-widest transform -rotate-6 text-xl sm:text-3xl -left-5 max-sm:-left-2 absolute top-20 sm:top-28">
           👋hi im dominic
         </span>
-        <h1 className="font-mosk text-5xl text-left break-words tracking-wide font-extrabold ">
+        <h1 className="font-mosk text-3xl sm:text-5xl text-left break-words tracking-wide font-extrabold">
           I love crafting <span className="text-amber-800">minimalist</span> and
-          cozy web designs. i also <span className="text-amber-800 ">draw</span>{" "}
+          cozy web designs. i also <span className="text-amber-800">draw</span>{" "}
           and <span className="text-amber-800">cycle</span> in my free time - or
           when i have nothing else to do. Oh, and i love{" "}
           <span className="text-amber-800">cats</span> too.
@@ -120,29 +153,27 @@ function App() {
       <img
         src={bg_cat}
         alt="Black Cat"
-        className="absolute w-[500px] right-0 transform scale-x-[-1]  top-[1050px] z-10 pointer-events-none"
+        className="absolute w-[300px] sm:w-[500px] max-sm:opacity-10 right-0 transform scale-x-[-1] top-[850px] sm:top-[1050px] z-10 pointer-events-none"
       />
 
       <section
         id="feature"
-        className="w-full max-w-[600px] min-h-screen mx-auto flex flex-col relative justify-center items-center  gap-4"
+        className="w-full max-w-[90%] sm:max-w-[600px] min-h-screen mx-auto flex flex-col relative justify-center items-center gap-4"
       >
-        <h1 className="text-5xl self-end font-bold font-mosk">
-          from ideas to <span className="text-amber-800"> code</span>
+        <h1 className="text-3xl sm:text-5xl self-end font-bold font-mosk">
+          from ideas to <span className="text-amber-800">code</span>
         </h1>
         <Accordion className="w-full" type="multiple">
           {projects.map((project, index) => (
-            <>
-              <AccordionItem value={index.toString()} key={index}>
-                <AccordionTrigger className="text-lg font-semibold font-sans">
-                  {project.title}
-                </AccordionTrigger>
-                <AccordionContent className="text-base font-medium font-sans flexf flex-col justify-center gap-2">
-                  <p>{project.description}</p>
-                  <span className="text-caccent">{project.techStack}</span>
-                </AccordionContent>
-              </AccordionItem>
-            </>
+            <AccordionItem value={index.toString()} key={index}>
+              <AccordionTrigger className="text-base sm:text-lg font-semibold font-sans">
+                {project.title}
+              </AccordionTrigger>
+              <AccordionContent className="text-sm sm:text-base font-medium font-sans flex flex-col justify-center gap-2">
+                <p>{project.description}</p>
+                <span className="text-caccent">{project.techStack}</span>
+              </AccordionContent>
+            </AccordionItem>
           ))}
         </Accordion>
       </section>
@@ -176,18 +207,21 @@ function App() {
 
       <section
         id="contact"
-        className="w-full max-w-[600px] min-h-screen mx-auto flex flex-col relative justify-center items-center  gap-4"
+        className="w-full max-w-[90%] sm:max-w-[600px] min-h-screen mx-auto flex flex-col relative justify-center items-center gap-4"
       >
-        <h1 className="text-5xl self-center font-bold font-mosk">
-          <span className="text-amber-800"> contact </span> me here:
+        <img
+          src={contact_cat}
+          alt="Black Cat"
+          className="pointer-events-none absolute w-64 -bottom-14 "
+        />
+        <h1 className="text-3xl sm:text-5xl self-center font-bold font-mosk">
+          <span className="text-amber-800">contact</span> me here:
         </h1>
-
         <img
           src={me}
           alt=""
-          className="w-56 rounded-full h-56 object-cover object-top"
+          className="w-40 sm:w-56 rounded-full h-40 sm:h-56 object-cover object-top"
         />
-
         <ul className="w-fit flex flex-col gap-2.5 justify-center">
           <li>
             <a
